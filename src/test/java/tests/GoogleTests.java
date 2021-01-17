@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import config.ConfigHelper;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,9 @@ public class GoogleTests {
 
     @Test
     void selenideSearchTest() {
+        Configuration.remote = ConfigHelper.getWebdriverRemote();
+
+
         String searchItem = ConfigHelper.getSearchItem();
         String searchResult = ConfigHelper.getSearchResult();
         String searchSite = ConfigHelper.getSearchSite();
